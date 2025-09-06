@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Trabajo Interactivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Color de fondo gris claro */
+        }
+        /* Estilos para la línea de tiempo */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px; /* Ajuste para alinear con el ícono */
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 1.25rem);
+            background-color: #e2e8f0; /* Color de la línea */
+            z-index: 0;
+        }
+        .timeline-item:last-child::before {
+            display: none; /* Ocultar la línea para el último elemento */
+        }
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .details-content.open {
+            max-height: 1000px; /* Un valor grande para permitir la expansión */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="max-w-5xl mx-auto">
+        <!-- Título principal -->
+        <header class="text-center mb-10">
+            <img src="https://innovaxis.mx/wp-content/uploads/2025/05/Imagen-de-WhatsApp-2025-05-15-a-las-16.20.49_b4832def-e1748003364242-768x202.jpg" alt="Logo Pay Japonés" class="mx-auto h-20 w-auto mb-4">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800">Plan de Trabajo: CuppyCake</h1>
+            <p class="text-slate-500 mt-2">Una ruta visual para validar el modelo de negocio y potenciar el crecimiento.</p>
+        </header>
+
+        <!-- Sección de Diagnóstico y Objetivo General -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <!-- Card de Diagnóstico -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-blue-100 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800">Diagnóstico del negocio</h2>
+                </div>
+                <p class="text-slate-600 mb-3">Gran potencial sustentado en un producto estrella de alta calidad, el <strong>pay japonés</strong>, ya validado por la comunidad japonesa en Cancún.</p>
+                <h3 class="font-semibold text-slate-700 mt-4 mb-2">Brechas a cerrar:</h3>
+                <ul class="list-disc list-inside text-slate-600 space-y-1">
+                    <li>Crear un sistema de operaciones delegable.</li>
+                    <li>Validar el modelo de negocio a mayor escala.</li>
+                    <li>Generar flujo de efectivo para financiar un futuro local físico.</li>
+                </ul>
+            </div>
+            <!-- Card de Objetivo General -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-green-100 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800">Objetivo general (7 Semanas)</h2>
+                </div>
+                <p class="text-slate-600">Validar un <strong>modelo de ventas de bajo costo</strong> que aumente los ingresos y libere tiempo de la emprendedora para dedicarlo a la estrategia del negocio.</p>
+            </div>
+        </div>
+
+        <!-- Línea de Tiempo de Fases del Proyecto -->
+        <div class="relative pl-8">
+            <!-- Fase 1 -->
+            <div class="timeline-item mb-8 relative">
+                <div class="absolute -left-[42px] top-3 bg-white p-1 rounded-full z-10 border-4 border-slate-200">
+                    <div class="w-6 h-6 bg-cyan-500 text-white flex items-center justify-center rounded-full font-bold text-sm">1</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 cursor-pointer phase-header" data-target="fase1-details">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-xs text-cyan-600 font-semibold uppercase">SEMANAS 1 - 3</p>
+                            <h3 class="text-lg font-bold text-slate-800">Fase 1: Generación de ingresos inmediatos</h3>
+                            <p class="text-sm text-slate-500 mt-1">Atacar el problema de visibilidad y fricción de compra.</p>
+                        </div>
+                        <div class="transform transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div id="fase1-details" class="details-content mt-4 border-t border-slate-200 pt-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div><h4 class="font-semibold text-slate-700 mb-2">Meta:</h4><p class="text-sm text-slate-600">Concretar alianzas con 2 a 3 negocios locales.</p></div>
+                            <div><h4 class="font-semibold text-slate-700 mb-2">Acciones Clave:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li>Customer Journey Map.</li><li>Definir criterios de aliados.</li><li>Diseñar propuestas de colaboración.</li><li>Preparar guion de venta.</li></ul></div>
+                            <div><h4 class="font-semibold text-slate-700 mb-2">KPI's:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li># de ideas propuestas.</li><li>Mapas y guiones completados (Sí/No).</li></ul></div>
+                            <div class="md:col-span-2 lg:col-span-3"><h4 class="font-semibold text-slate-700 mb-2">Entregable:</h4><p class="text-sm text-slate-600 bg-cyan-50 p-3 rounded-lg">Customer Journey Map, criterios de selección y modelo de venta.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fase 2 -->
+            <div class="timeline-item mb-8 relative">
+                <div class="absolute -left-[42px] top-3 bg-white p-1 rounded-full z-10 border-4 border-slate-200">
+                    <div class="w-6 h-6 bg-indigo-500 text-white flex items-center justify-center rounded-full font-bold text-sm">2</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 cursor-pointer phase-header" data-target="fase2-details">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-xs text-indigo-600 font-semibold uppercase">SEMANAS 4 - 5</p>
+                            <h3 class="text-lg font-bold text-slate-800">Fase 2: Optimización de la logística</h3>
+                            <p class="text-sm text-slate-500 mt-1">Resolver la entrega de forma creativa y económica.</p>
+                        </div>
+                         <div class="transform transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div id="fase2-details" class="details-content mt-4 border-t border-slate-200 pt-4">
+                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div><h4 class="font-semibold text-slate-700 mb-2">Meta:</h4><p class="text-sm text-slate-600">Establecer un sistema de entrega por zonas con días y horarios fijos.</p></div>
+                            <div><h4 class="font-semibold text-slate-700 mb-2">Acciones Clave:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li>Mapeo de concentración de clientes actuales.</li><li>Diseño de rutas y agenda de entrega (con Cosplay como diferenciador).</li></ul></div>
+                            <div><h4 class="font-semibold text-slate-700 mb-2">KPI's:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li># de zonas con demanda identificada.</li><li>Rutas de entrega definidas (Sí/No).</li></ul></div>
+                            <div class="md:col-span-2 lg:col-span-3"><h4 class="font-semibold text-slate-700 mb-2">Entregable:</h4><p class="text-sm text-slate-600 bg-indigo-50 p-3 rounded-lg">Mapa de concentración de clientes y diseño de rutas de entrega.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fase 3 -->
+            <div class="timeline-item relative">
+                 <div class="absolute -left-[42px] top-3 bg-white p-1 rounded-full z-10 border-4 border-slate-200">
+                    <div class="w-6 h-6 bg-amber-500 text-white flex items-center justify-center rounded-full font-bold text-sm">3</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 cursor-pointer phase-header" data-target="fase3-details">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-xs text-amber-600 font-semibold uppercase">SEMANAS 6 - 7</p>
+                            <h3 class="text-lg font-bold text-slate-800">Fase 3: Preparación para el crecimiento</h3>
+                            <p class="text-sm text-slate-500 mt-1">Documentar tareas para liberar a la emprendedora de la operación.</p>
+                        </div>
+                         <div class="transform transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div id="fase3-details" class="details-content mt-4 border-t border-slate-200 pt-4">
+                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div><h4 class="font-semibold text-slate-700 mb-2">Metas:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li>Crear 2-3 manuales de tareas operativas.</li><li>Presentar resultados y planificar los próximos 6 meses.</li></ul></div>
+                            <div><h4 class="font-semibold text-slate-700 mb-2">Acciones Clave:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li>Diseño de guías visuales de procesos.</li><li>Análisis de resultados.</li><li>Elaboración de Hoja de Ruta estratégica.</li></ul></div>
+                            <div><h4 class="font-semibold text-slate-700 mb-2">KPI's:</h4><ul class="list-disc list-inside text-sm text-slate-600 space-y-1"><li># de procesos documentados.</li><li>Tiempo ahorrado.</li><li>% de incremento en ventas.</li><li>Hoja de Ruta completada (Sí/No).</li></ul></div>
+                            <div class="md:col-span-2 lg:col-span-3"><h4 class="font-semibold text-slate-700 mb-2">Entregables:</h4><p class="text-sm text-slate-600 bg-amber-50 p-3 rounded-lg">Manuales de procedimientos y Reporte de resultados con Ruta Estratégica.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const phaseHeaders = document.querySelectorAll('.phase-header');
+
+            phaseHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const targetId = this.dataset.target;
+                    const detailsContent = document.getElementById(targetId);
+                    const arrowIcon = this.querySelector('svg');
+
+                    // Cerrar todos los demás
+                    phaseHeaders.forEach(otherHeader => {
+                        const otherTargetId = otherHeader.dataset.target;
+                        if (otherTargetId !== targetId) {
+                            document.getElementById(otherTargetId).classList.remove('open');
+                            otherHeader.querySelector('svg').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Abrir o cerrar el actual
+                    detailsContent.classList.toggle('open');
+                    if (detailsContent.classList.contains('open')) {
+                        arrowIcon.style.transform = 'rotate(180deg)';
+                    } else {
+                        arrowIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
